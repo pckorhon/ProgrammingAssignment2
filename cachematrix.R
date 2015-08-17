@@ -1,6 +1,6 @@
-## Following functions implement a function to create a 'cached matrix object'
-## capable to remember an inverse matrix of itself, and a function 'cacheSolve'
-## to calculate inverse matrix for this 'cached matrix object'.
+## Following includes both a function to create a 'cached matrix object' capable to
+## remember an inverse matrix of itself, and a function 'cacheSolve'
+## to calculate inverse matrix of this 'cached matrix object'.
 
 
 ## Returns a list describing a matrix object capable of caching
