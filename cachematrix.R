@@ -1,7 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Following functions implement a function to create a 'cached matrix object'
+## capable to remember an inverse matrix of itself, and a function 'cacheSolve'
+## to calculate inverse matrix for this 'cached matrix object'.
 
-## Returns a list describing a matrix object capable of caching own inverse.
+
+## Returns a list describing a matrix object capable of caching
+## own inverse matrix.
 
 makeCacheMatrix <- function(mat = matrix()) {
         inverse <- NULL
@@ -16,9 +19,8 @@ makeCacheMatrix <- function(mat = matrix()) {
 }
 
 
-
-## Returns inverse of matrix 'cacheMat' and recalculates
-## the inverse only if it has not been calculated already.
+## Returns inverse of matrix 'cacheMat' and recalculates the
+## inverse matrix only if it has not been calculated already.
 
 cacheSolve <- function(cacheMat, ...) {
         ## Return a matrix that is the inverse of 'cacheMat'
@@ -32,11 +34,3 @@ cacheSolve <- function(cacheMat, ...) {
         cacheMat$setInv(inv)
         inv
 }
-
-
-source("cachematrix.R")
-myMat <- matrix(c(1,2,3,4,5,4,3,2,1), nrow=3)
-solve(myMat)
-cacheMat <- makeCacheMatrix(myMat)
-cacheMat$get()
-cacheSolve(cacheMat)
